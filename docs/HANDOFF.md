@@ -10,13 +10,14 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
   summary (she picked the "cheap Haiku for most steps" option). Refusal fallbacks on for Opus.
 - 2026-11-07: Code computes all numbers; the LLM judges. Model-proposed rules run from a whitelist, never as code.
 - 2026-11-07: Dataset: Observatoire de l'Habitat apartment asking prices 2010–2025 (CC0), kept with its real mess.
+- 2026-11-07: API key lives in a local `.env` (gitignored), read by `llm.load_dotenv`; never commit it.
 - 2026-11-07: Manual tool-use loop (not the beta tool runner) so every call is visible and easy to explain.
 
 ## Completed recently
 - extract, facts, tools, llm, steps, pipeline, cli; config + 5 prompts; README; tests.
 
 ## Blockers / waiting on the owner
-- ANTHROPIC_API_KEY (console.anthropic.com, a few euros of credit is plenty).
+- ANTHROPIC_API_KEY: Mariam will paste it; save it to `.env` (KEY=value), not to git or docs.
 - Decide whether to publish on GitHub (public repo = portfolio link).
 
 ## Next steps (ordered)
@@ -30,3 +31,12 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 
 ## Session log
 - 2026-11-07: Project created end to end; offline tests pass; waiting for an API key.
+- 2026-11-07: Added `.env` loading for the API key (6 tests pass).
+
+<!-- AUTO-STATUS:START (maintained by ~/.claude/hooks/local_handoff.py, do not edit by hand) -->
+## Auto status
+- Branch: `main`
+- Last commit: 4a705cd Agentic data pipeline: profile, quality, integrity, statistics agent, summary (2026-11-07)
+- Uncommitted files: 1:
+  - `src/adp/llm.py`
+<!-- AUTO-STATUS:END -->

@@ -36,8 +36,24 @@ class LLMError(RuntimeError):
     pass
 
 
+def load_dotenv(path) -> None:
+    """KEY=value lines from a local .env (gitignored) into the environment, without overriding what's already set."""
+    import os
+    from pathlib import Path
+    p = Path(path)
+    if not p.exists():
+        return
+    for line in p.read_text().splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
 class Claude:
     def __init__(self) -> None:
+        from pathlib import Path
+        load_dotenv(Path(__file__).resolve().parents[2] / ".env")
         self.client = anthropic.Anthropic()  # ANTHROPIC_API_KEY (or an `ant auth login` profile)
 
     def _create(self, model: str, **kw):
