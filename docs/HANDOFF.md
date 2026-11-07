@@ -17,7 +17,8 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 - extract, facts, tools, llm, steps, pipeline, cli; config + 5 prompts; README; tests.
 
 ## Blockers / waiting on the owner
-- Decide whether to publish on GitHub (public repo = portfolio link).
+- Publish: Mariam agreed (2026-11-07); auto mode blocks Claude from creating a public repo, so she runs
+  `gh repo create agentic-data-pipeline --public --source . --remote origin --push` herself. History scanned: no key.
 
 ## Next steps (ordered)
 1. Prompt tuning: the summary added 'northern rural' (not in the data); statistics should run the spelling check or say it's out of scope.
@@ -35,6 +36,6 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 <!-- AUTO-STATUS:START (maintained by ~/.claude/hooks/local_handoff.py, do not edit by hand) -->
 ## Auto status
 - Branch: `main`
-- Last commit: e8b46b8 Read the API key from a local .env file (2026-11-07)
+- Last commit: 4bb8a3c Stop tracking the .venv symlink (2026-11-07)
 - Uncommitted files: 0
 <!-- AUTO-STATUS:END -->
