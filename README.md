@@ -56,6 +56,15 @@ uv run adp show integrity               # print a step's result
 The final report is written to `runs/<run>/report.md`. Routine steps run on Claude Haiku 5.5 and the agent and summary
 on Claude Opus 5.5, so a full run costs a few cents; the cost table at the end of each report shows the exact tokens.
 
+## Sample result
+
+[`docs/sample_report.md`](docs/sample_report.md): a full run on the demo data, with the agent's findings and summaries in
+English, French and Arabic. That run made 6 Claude calls and cost **$0.15**. In one turn, the statistics agent chose 6
+analyses (coverage, two national trends, the top and bottom communes, growth 2010→2025).
+
+Headline: *Luxembourg apartment asking prices roughly doubled from 2010 to a 2022 peak (median €3,619 → €8,470 per m²),
+then eased to €7,661 in 2025; the data is usable once 620 suppressed price rows are treated as missing.*
+
 ## What it found in the demo data (deterministic facts)
 
 - 620 of 1,675 rows (37%) hide their prices as `*`: the publisher masks communes with fewer than 30 listings.

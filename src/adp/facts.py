@@ -83,9 +83,8 @@ def quality(df: pd.DataFrame, key: list[str]) -> dict:
                         iqr_outliers={"count": int(len(outl)), "low_fence": _py(lo), "high_fence": _py(hi),
                                       "examples": outl.head(5).astype(str).to_dict(orient="records")})
         else:
-            near = _near_duplicates(s.dropna().astype(str).unique())
-            if near:
-                info["similar_spellings"] = near[:10]
+            # always reported, so an empty list reads as "checked, none found", not "not checked"
+            info["similar_spellings"] = _near_duplicates(s.dropna().astype(str).unique())[:10]
         cols[c] = info
     out["columns"] = cols
     if "year" in df.columns:
