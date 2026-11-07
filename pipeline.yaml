@@ -1,0 +1,46 @@
+# Agentic data pipeline: one entry per step, run in this order.
+# Each step: code computes exact facts → Claude reads them with the step's prompt → a JSON result in runs/<run>/.
+# Change a model, an effort level or a prompt file, then re-run just that step:  adp run --step <id>
+
+dataset: data/housing_apartments_2010_2025.csv
+key: [year, commune]                 # one row per year and commune
+group_column: commune
+time_column: year
+metrics: [n_listings, avg_price_eur, avg_price_per_m2_eur]
+
+# Validation rules you always want, on top of the ones the profile step proposes (same format).
+extra_rules:
+  - {type: unique, columns: [year, commune], reason: "one row per commune per year"}
+
+steps:
+  - id: profile                      # what is this data, and what rules should it follow?
+    enabled: true
+    model: claude-haiku-5-5          # cheap model for the routine steps
+    effort: medium
+    prompt: prompts/1_profile.md
+
+  - id: quality                      # missing values, placeholders, duplicates, outliers: which are real problems?
+    enabled: true
+    model: claude-haiku-5-5
+    effort: medium
+    prompt: prompts/2_quality.md
+
+  - id: integrity                    # code runs the validation rules; Claude judges the failures
+    enabled: true
+    model: claude-haiku-5-5
+    effort: medium
+    prompt: prompts/3_integrity.md
+
+  - id: statistics                   # an agent picks which analyses to run from a safe toolbox
+    enabled: true
+    model: claude-opus-5-5
+    effort: medium
+    max_tool_calls: 8
+    prompt: prompts/4_statistics.md
+
+  - id: summary                      # one short report for a manager, in three languages
+    enabled: true
+    model: claude-opus-5-5
+    effort: medium
+    languages: [en, fr, ar]
+    prompt: prompts/5_summary.md
