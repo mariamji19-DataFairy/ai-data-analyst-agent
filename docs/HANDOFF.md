@@ -1,4 +1,4 @@
-# Agentic Data Pipeline: handover
+# AI Data Analyst Agent: handover
 _Last updated: 2026-11-07 (by Claude, session summary)_
 
 ## Current status
@@ -18,7 +18,7 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 
 ## Blockers / waiting on the owner
 - Publish: Mariam agreed (2026-11-07); auto mode blocks Claude from creating a public repo, so she runs
-  `gh repo create agentic-data-pipeline --public --source . --remote origin --push` herself. History scanned: no key.
+  `gh repo create ai-data-analyst-agent --public --source . --remote origin --push` herself. History scanned: no key.
 
 ## Next steps (ordered)
 1. Prompt tuning: the summary added 'northern rural' (not in the data); statistics should run the spelling check or say it's out of scope.
@@ -29,6 +29,7 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 - `uv run adp run --dry-run` (free) · `uv run adp run --review` · `uv run --group dev pytest`
 
 ## Session log
+- 2026-11-08: Renamed to ai-data-analyst-agent (her choice); folder ~/Desktop/Claude/ai-data-analyst-agent.
 - 2026-11-07: Project created end to end; offline tests pass; waiting for an API key.
 - 2026-11-07: Added `.env` loading for the API key (6 tests pass).
 - 2026-11-07: First real run OK ($0.15). Fixes: `.venv` moved to `.venv.nosync` (iCloud on Desktop broke it); spelling check always reported.
@@ -36,6 +37,6 @@ Portfolio project for Mariam's job search (backs the "AI Enthusiast" line on her
 <!-- AUTO-STATUS:START (maintained by ~/.claude/hooks/local_handoff.py, do not edit by hand) -->
 ## Auto status
 - Branch: `main`
-- Last commit: 4bb8a3c Stop tracking the .venv symlink (2026-11-07)
+- Last commit: f1a85fe Handover: publishing step (2026-11-07)
 - Uncommitted files: 0
 <!-- AUTO-STATUS:END -->

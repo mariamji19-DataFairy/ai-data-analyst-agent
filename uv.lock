@@ -14,7 +14,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "agentic-data-pipeline"
+name = "ai-data-analyst-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

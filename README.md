@@ -1,7 +1,8 @@
-# Agentic Data Pipeline
+# AI Data Analyst Agent
 
-A step-by-step data pipeline where **code computes the facts and an LLM (Claude) interprets them**. Each step is
-isolated: it has its own prompt, model and settings, saves its own result, and can be inspected and re-run alone.
+An AI agent that does a data analyst's job, step by step: profile a dataset, check its quality, validate it,
+choose and run the right analyses, and write the report. It is built so that **code computes every number and an LLM (Claude) interprets
+them**, so the agent never invents a figure. Each step is isolated: it has its own prompt, model and settings, saves its own result, and can be inspected and re-run alone.
 
 Demo dataset: **Luxembourg apartment asking prices by commune, 2010–2025** (Ministère du Logement, Observatoire de
 l'Habitat, via [data.public.lu](https://data.public.lu/fr/datasets/prix-annonces-des-logements-par-commune/), CC0).
