@@ -1,7 +1,7 @@
 [project]
-name = "ai-data-analyst-agent"
+name = "analyst-copilot"
 version = "0.1.0"
-description = "AI data analyst agent: profile, quality, integrity, statistics agent, multilingual summary"
+description = "AI copilot for data analysts: profile, quality, integrity, statistics, multilingual report; the analyst approves each step"
 requires-python = ">=3.11"
 dependencies = ["anthropic>=1.0", "pandas>=2.2", "openpyxl>=3.1", "pyyaml>=6.0"]
 
@@ -9,7 +9,7 @@ dependencies = ["anthropic>=1.0", "pandas>=2.2", "openpyxl>=3.1", "pyyaml>=6.0"]
 adp = "adp.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "matplotlib>=3.8"]
 
 [build-system]
 requires = ["hatchling"]

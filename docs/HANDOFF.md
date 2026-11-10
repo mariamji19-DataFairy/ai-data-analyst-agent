@@ -1,4 +1,4 @@
-# AI Data Analyst Agent: handover
+# Analyst Copilot: handover
 _Last updated: 2026-11-07 (by Claude, session summary)_
 
 ## Current status
@@ -27,6 +27,7 @@ Portfolio project: an LLM-assisted data analysis pipeline.
 - `uv run adp run --dry-run` (free) · `uv run adp run --review` · `uv run --group dev pytest`
 
 ## Session log
+- 2026-11-10: Renamed to analyst-copilot (framed as a copilot: the analyst approves each step); README rewritten with chart (scripts/make_chart.py).
 - 2026-11-08: Published at github.com/mariamji19-DataFairy/ai-data-analyst-agent (public), with description and topics.
 - 2026-11-08: Renamed to ai-data-analyst-agent (her choice); folder ~/Desktop/Claude/ai-data-analyst-agent.
 - 2026-11-07: Project created end to end; offline tests pass; waiting for an API key.
@@ -36,6 +37,6 @@ Portfolio project: an LLM-assisted data analysis pipeline.
 <!-- AUTO-STATUS:START (maintained by ~/.claude/hooks/local_handoff.py, do not edit by hand) -->
 ## Auto status
 - Branch: `main`
-- Last commit: a74019c Rename the project to AI Data Analyst Agent (2026-11-08)
+- Last commit: 8d0d98b Handover: published (2026-11-08)
 - Uncommitted files: 0
 <!-- AUTO-STATUS:END -->
